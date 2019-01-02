@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- <Pattern>[%d{MM-dd HH:mm:ss}][%-5level][%thread] %class{36}.%method:%line - %msg%n</Pattern> -->
+			<Pattern>[%-5level][%d{YYYY-MM-dd HH:mm:ss.SSS}][%thread][%F:%L] %m%n</Pattern>
+		</encoder>
+	</appender>
+	
+	<!-- <logger name="org.mybatis" level="DEBUG "  additivity="false">
+    	<appender-ref ref="console" />
+	</logger> -->
+	
+	<!-- <logger name="org.apache.commons.dbcp2" level="DEBUG"/> -->
+
+	<logger name="java.sql" level="ERROR"/>
+
+	<logger name="jdbc.sqlonly" level="DEBUG" additivity="false"> 
+		<appender-ref ref="console" /> 
+	</logger>
+	
+	<logger name="jdbc.resultsettable" level="DEBUG" additivity="false">
+		<appender-ref ref="console" /> 
+	</logger>
+	
+	<logger name="com.example.controller" level="INFO" additivity="false">
+		<appender-ref ref="console" /> 
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="console" />
+	</root>
+</configuration>
